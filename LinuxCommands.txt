@@ -1,0 +1,12 @@
+upower -i /org/freedesktop/UPower/devices/battery_BAT0 			// Check battery life
+
+lscpu 									// cpu info
+lspci
+
+Networking
+
+ifconfig
+netstat (-h)
+traceroute
+sudo lshw -class network (network devices)
+sudo lshw 
