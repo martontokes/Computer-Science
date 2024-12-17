@@ -1,0 +1,121 @@
+https://acg.cis.upenn.edu/milom/cis371-Spring08/lectures/05_fp.pdf
+https://www.cs.umd.edu/~meesh/411/CA-online/chapter/floating-point-arithmetic-unit/index.html
+https://eng.libretexts.org/Bookshelves/Computer_Science/Programming_Languages/x86-64_Assembly_Language_Programming_with_Ubuntu_(Jorgensen)/18%3A_Floating-Point_Instructions
+
+
+Understanding floating point arithmetic and how it's carried out in IEEE 754 floating-point units (FPUs) is an in-depth topic, but here's a structured approach to help you understand each step of the process:
+1. Learn the IEEE 754 Standard
+
+The IEEE 754 standard defines the representation and operations for floating point numbers. Floating point numbers consist of three parts:
+
+    Sign bit (1 bit): Determines if the number is positive or negative.
+    Exponent (8 bits for single precision, 11 bits for double precision): Determines the scale of the number.
+    Fraction (Mantissa, 23 bits for single precision, 52 bits for double precision): Holds the precision of the number.
+
+For example, in single precision:
+
+[ S | Exponent (8 bits) | Mantissa (23 bits) ]
+
+    S = Sign bit (0 for positive, 1 for negative)
+    Exponent = 8 bits
+    Mantissa = 23 bits
+
+The value is computed as:
+(−1)sign×1.M×2(E−bias)
+(−1)sign×1.M×2(E−bias)
+
+Where:
+
+    sign = sign bit (0 or 1)
+    M = Mantissa (with an implicit leading 1 for normalized numbers)
+    E = Exponent (with a bias depending on the precision: 127 for single precision, 1023 for double precision)
+    bias = 127 (single) or 1023 (double)
+
+2. Understand Floating Point Representation in Memory
+
+    Learn how floating point numbers are stored in memory (as 32-bit or 64-bit binary values).
+    Normalization: The mantissa is normalized (i.e., the first digit is always 1 unless it's zero), and the exponent is adjusted accordingly.
+    Special cases: Zero, infinity, NaN (Not a Number), denormalized numbers, and subnormal numbers (very small numbers close to zero).
+
+3. Steps in Floating Point Arithmetic
+
+IEEE 754 floating-point operations, such as addition, subtraction, multiplication, and division, involve several steps. Here's a breakdown:
+a. Addition/Subtraction
+
+    Align the exponents: The exponents of the two numbers involved in the operation must be the same. This involves shifting the mantissa of the smaller number to match the larger number's exponent.
+    Perform the operation: Once the exponents are aligned, the mantissas are added or subtracted (depending on the operation).
+    Normalize the result: After the operation, the result might need to be normalized by adjusting the exponent and mantissa so that the leading bit is 1.
+    Round the result: The result is rounded to the nearest representable value, following IEEE 754 rounding rules.
+
+b. Multiplication
+
+    Multiply the mantissas: The mantissas are multiplied.
+    Add the exponents: The exponents are added (since multiplication of numbers means their exponents are added).
+    Normalize the result: Normalize the resulting product, ensuring the leading bit of the mantissa is 1.
+    Round the result: Round the result to the nearest representable value.
+
+c. Division
+
+    Divide the mantissas: The mantissas are divided.
+    Subtract the exponents: The exponent of the divisor is subtracted from the exponent of the dividend.
+    Normalize the result: Normalize the result so that the leading bit of the mantissa is 1.
+    Round the result: Round the result according to IEEE 754 rules.
+
+4. IEEE 754 Exceptions and Edge Cases
+
+Understand the special cases defined by IEEE 754:
+
+    Overflow: When the result is too large to represent.
+    Underflow: When the result is too small to represent.
+    NaN (Not a Number): Produced by undefined operations (e.g., 0/0, √-1).
+    Infinity: Produced by operations like dividing by zero.
+    Denormalized numbers: Numbers closer to zero than the smallest normalized number.
+
+5. FPUs (Floating Point Units)
+
+FPUs are hardware components that execute floating point arithmetic operations. The implementation of floating point operations in an FPU follows the IEEE 754 standard, and involves:
+
+    Exponent alignment: Aligning the exponents of operands.
+    Mantissa multiplication/division: Using hardware multipliers/dividers.
+    Normalization: Hardware logic for shifting the mantissa and adjusting the exponent.
+    Rounding: Using round mode logic to handle rounding errors.
+
+6. Understand Rounding Modes
+
+IEEE 754 defines four rounding modes:
+
+    Round to nearest (default): Round to the nearest value, with ties rounded to the nearest even number.
+    Round towards zero: Round towards zero (truncate).
+    Round towards positive infinity: Round upwards.
+    Round towards negative infinity: Round downwards.
+
+7. Simulate Floating Point Arithmetic
+
+    Software Simulation: To deeply understand floating point arithmetic, you can simulate it in software. Write a program that mimics the behavior of floating point operations according to the IEEE 754 rules. This includes handling special cases, rounding, and performing normalization.
+    Study the FPU: If you have access to a hardware simulator or detailed architecture documentation, study how the FPU of a particular processor implements the IEEE 754 standard.
+
+8. Practice with Examples
+
+    Manual Calculation: Try converting decimal numbers to IEEE 754 representation, perform the operations (like addition, multiplication), and convert back to decimal. This will help you see how each step is performed.
+    FP Operation Example: Let's say you want to add two numbers in IEEE 754 format:
+        Convert the numbers to their IEEE 754 representation.
+        Align the exponents.
+        Add the mantissas.
+        Normalize the result.
+        Round the result.
+        Convert the final result back to decimal.
+
+9. Study FPUs in Specific Hardware Architectures
+
+If you're interested in understanding FPUs in specific processors (like Intel, ARM, etc.), read the hardware manuals for those processors. Many of these processors have documentation detailing how floating-point operations are carried out, often including specifics about the FPU, rounding, and handling of exceptions.
+10. Use Debuggers and Tools
+
+Some debugging tools (e.g., GDB) and simulators allow you to step through floating point operations at the instruction level, showing how FPUs handle floating-point instructions. This will help you see how hardware performs these operations at a lower level.
+Recommended Resources:
+
+    IEEE 754 Standard (Official Documentation): To get an authoritative understanding of the standard itself.
+    Computer Architecture Textbooks: Books like "Computer Organization and Design" by David Patterson and John Hennessy, which cover floating point units and IEEE 754.
+    FPGA/ASIC Documentation: For hardware implementations of FPUs.
+    Online Simulators: Tools like floating-point calculators and simulation environments can help you experiment with floating-point operations interactively.
+
+By following these steps and practicing, you'll be able to understand the intricacies of floating-point arithmetic and how it's implemented in IEEE 754 FPUs.

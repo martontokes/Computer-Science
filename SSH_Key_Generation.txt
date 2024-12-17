@@ -1,0 +1,2 @@
+ssh-keygen -t rsa -b 4096 -C "my-custom-comment" // if omit -C comp name will be included
+						// RSA is encryption -b is size

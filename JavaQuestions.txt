@@ -1,0 +1,3 @@
+Garbage Collector: mark and sweep, root node, mark bit. scan objects referenced in stack frames.
+
+Eden, Generations, 
