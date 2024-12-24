@@ -1,0 +1,43 @@
+ASCII
+
+	CONTROL & PRINTABLE CHARS
+	1 BYTE LONG: first (lower, less significant, "right") 7 bits used
+	FIRST BYTE NEVER USED
+	0-127
+
+EXTENDED ASCII
+
+	1 BYTE LONG
+	UNSIGNED BYTE 0-255
+	256 characters
+
+UNICODE
+
+	Codepoints: U+ (unicode) HEX (codepoint value)
+
+
+UTF8
+
+	Capable encoding all 1,112,064 unicode scalar values
+	COMPATIBLE with lower ascii
+
+UTF16
+
+	Capable of encoding all codepoints
+	
+	(1 | 2) x 2 bytes
+	
+	FIRST 16 BITS
+	
+	 
+	
+	57344 - 61439
+	
+	
+	
+
+UTF32
+
+
+
+BMP 0000-FFFF (0-65535)

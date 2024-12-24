@@ -207,3 +207,12 @@ Machine Epsilon	The smallest representable difference between two floating-point
 In conclusion, floating-point numbers in computer systems have a complex structure that involves several attributes like base, precision, sign, exponent, and bias, all of which play an important role in ensuring that the numbers can represent a wide range of values with reasonable accuracy.
 
 
+
+
+
+    If the guard bit is not set, then it rounds down (fraction is < 0.5), mantissa doesn’t change.
+    If the guard bit IS set:
+        If round bit or sticky bit is set, always round up (fraction is > 0.5), mantissa increases by 1.
+        Otherwise, it’s a tie (exactly 0.5, could round either way), so round such that the mantissa is even (the lower bit of the mantissa is 0), mantissa increments if the lower bit was 1 (to make it even).
+
+

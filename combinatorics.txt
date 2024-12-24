@@ -1,0 +1,17 @@
+The number of pairs of values that can be formed from two sets depends on the sizes of those sets. To calculate how many pairs you can form, you need to know:
+
+    The size of the first set, denoted as ∣A∣∣A∣
+    The size of the second set, denoted as ∣B∣∣B∣
+
+Formula for Number of Pairs
+
+If set AA has ∣A∣∣A∣ elements and set BB has ∣B∣∣B∣ elements, the total number of possible pairs that can be formed, where one element is chosen from each set, is given by the formula:
+Total pairs=∣A∣×∣B∣
+Total pairs=∣A∣×∣B∣
+
+
+
+
+The number of combinations that can arise from elements of four sets depends on how many elements are in each set. If we have four sets AA, BB, CC, and DD with respective sizes ∣A∣∣A∣, ∣B∣∣B∣, ∣C∣∣C∣, and ∣D∣∣D∣, the total number of possible combinations of one element from each set is given by the product of their sizes:
+Total combinations=∣A∣×∣B∣×∣C∣×∣D∣
+Total combinations=∣A∣×∣B∣×∣C∣×∣D∣
