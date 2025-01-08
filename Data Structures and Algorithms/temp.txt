@@ -1,0 +1,304 @@
+package com.epam.autotasks;
+
+import java.io.IOException;
+import java.nio.file.FileVisitResult;
+import java.nio.file.Path;
+import java.nio.file.SimpleFileVisitor;
+import java.nio.file.attribute.BasicFileAttributes;
+import java.util.Comparator;
+import java.util.TreeMap;
+import java.util.TreeSet;
+
+class CustomFileVisitor extends SimpleFileVisitor<Path> {
+
+    private final short defaultDepth;
+    private final Path defaultPath;
+
+    public TreeMap<Path, Directory> directories = new TreeMap<>(new Comparator<Path>() {
+        @Override
+        public int compare(Path o1, Path o2) {
+            return o1.toString().toLowerCase().compareTo(o2.toString().toLowerCase());
+        }
+
+    });
+
+    CustomFileVisitor(Path path) {
+
+        this.defaultDepth = (short) path.getNameCount();
+        this.defaultPath = path;
+
+    }
+
+    public Path getDefaultPath() {
+
+        return defaultPath;
+
+    }
+
+    @Override
+    public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs) throws IOException {
+
+        directories.put(dir, new Directory(dir));
+
+        if (dir.getNameCount() > defaultDepth)
+            directories.get(dir.getParent()).content.add(directories.get(dir));
+
+        return FileVisitResult.CONTINUE;
+
+    }
+
+    @Override
+    public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+
+        directories.get(file.getParent()).content.add(new File(file));
+
+        return FileVisitResult.CONTINUE;
+
+    }
+
+    @Override
+    public FileVisitResult visitFileFailed(Path file, IOException exc) throws IOException {
+
+        System.out.println("File visit failed. " + file.toString());
+        return FileVisitResult.CONTINUE;
+    }
+
+    @Override
+    public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
+
+        if (exc != null) {
+            System.err.println("Error after visiting directory: " + dir + " due to " + exc.getMessage());
+        }
+
+        Directory directoryVisited = directories.get(dir);
+
+        if (dir.getNameCount() > defaultDepth) {
+
+            directoryVisited.content.add(directories.get(dir));
+
+        }
+
+        directoryVisited.setSize();
+
+        return FileVisitResult.CONTINUE;
+
+    }
+
+    abstract static class Entry {
+
+        public String name;
+        public String getName() {
+
+            return name;
+
+        }
+
+        abstract public long getSize();
+
+    }
+
+    class Directory extends Entry {
+
+        private long size = 0;
+        private final short depth;
+
+        public final TreeSet<Entry> content = new TreeSet<>(new Comparator<Entry>() {
+            @Override
+            public int compare(Entry f1, Entry f2) {
+
+                return f1.name.toLowerCase().compareTo(f2.name.toLowerCase());
+
+            }
+        });
+
+
+        Directory(Path path) {
+
+            this.depth = (short) (path.getNameCount() - defaultDepth);
+            this.name = String.valueOf(path.getFileName());
+
+        }
+
+        short depth() {
+
+            return depth;
+
+        }
+
+        void setSize() {
+
+            long size = 0;
+
+            for (Entry file : content) {
+
+                size += file.getSize();
+
+            }
+
+            this.size = size;
+
+        }
+
+        public short getDepth() {
+
+            return depth;
+
+        }
+
+        @Override
+        public long getSize() {
+
+            return this.size;
+
+        }
+
+    }
+
+    class File extends Entry {
+
+        private final long size;
+
+        File(Path path) {
+
+            this.size = path.toFile().length();
+            this.name = path.toFile().getName();
+
+        }
+
+        @Override
+        public long getSize() {
+
+            return this.size;
+
+        }
+
+    }
+
+
+}
+
+
+package com.epam.autotasks;
+
+import java.nio.file.Path;
+import java.util.Map;
+import java.util.Optional;
+import com.epam.autotasks.CustomFileVisitor;
+
+public class OutputFormatter {
+
+    static Optional<String> formatter(CustomFileVisitor visitor) {
+
+        StringBuilder builder = new StringBuilder();
+
+        CustomFileVisitor.Directory rootDirectory = visitor.directories.get(visitor.getDefaultPath());
+
+
+        for (Map.Entry<Path, CustomFileVisitor.Directory> entry : visitor.directories.entrySet()) {
+
+            builder
+                    .append(getDirectoryFormatPrefix(entry, visitor))
+                    .append(entry.getValue().name)
+                    .append(' ')
+                    .append(entry.getValue().getSize())
+                    .append(" bytes\n");
+
+            for (CustomFileVisitor.Entry subEntry : visitor.directories.get(entry.getKey()).content) {
+
+                if (subEntry.getClass().getSimpleName().equals("File")) {
+
+                    builder.append(getFileFormatPrefix(entry, subEntry, visitor));
+                    builder.append(subEntry.name)
+                            .append(' ')
+                            .append(subEntry.getSize())
+                            .append(" bytes\n");
+
+                }
+
+            }
+
+        }
+
+        System.out.println(builder);
+        return Optional.of(builder.toString());
+
+    }
+
+    static String getDirectoryFormatPrefix(Map.Entry<Path, CustomFileVisitor.Directory> entry, CustomFileVisitor visitor) {
+
+        StringBuilder dirFormatPrefixBuilder = new StringBuilder();
+
+        if (entry.getValue().getDepth() > 1) {
+
+            for (int i = 1; i < entry.getValue().getDepth() ; i++) {
+
+                dirFormatPrefixBuilder.append("│  ");
+
+            }
+
+        }
+
+        if (entry.getValue().getDepth() > 0) {
+
+            if (dirLastEntryInDirectory(entry.getKey(), visitor)) {
+
+                dirFormatPrefixBuilder.append("└─ ");
+
+            } else {
+
+                dirFormatPrefixBuilder.append("├─ ");
+
+            }
+
+        }
+
+        return dirFormatPrefixBuilder.toString();
+
+    }
+
+    static String getFileFormatPrefix(Map.Entry<Path, CustomFileVisitor.Directory> entry, CustomFileVisitor.Entry subEntry, CustomFileVisitor visitor) {
+
+        StringBuilder fileFormatPrefixBuilder = new StringBuilder();
+
+            for (int i = 0; i < entry.getValue().getDepth() ; i++) {
+
+                fileFormatPrefixBuilder.append("│  ");
+
+        }
+
+            if (entry.getValue().content.last().name.equalsIgnoreCase(subEntry.name)) {
+
+                fileFormatPrefixBuilder.append("└─ ");
+
+            } else {
+
+                fileFormatPrefixBuilder.append("├─ ");
+
+            }
+
+        return fileFormatPrefixBuilder.toString();
+
+    }
+
+    static boolean fileLastEntryInDirectory() {
+
+        return true;
+
+    }
+
+    static boolean dirLastEntryInDirectory(Path path, CustomFileVisitor visitor) {
+
+        if (visitor.directories.get(path.getParent()).content.last().name.equals(visitor.directories.get(path).name)) {
+
+            return true;
+
+        }
+
+        return false;
+
+    }
+
+
+
+}
+

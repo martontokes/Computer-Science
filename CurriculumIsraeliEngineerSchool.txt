@@ -1,0 +1,108 @@
+Digital Electronics I
+EG 2104 EX
+Total :7 hours/week
+Year :II Lecture :4 hours/week
+Part :I Tutorial :hours/week
+Practica :3 hours/week
+Course description
+:
+This course deals on the basic concepts of digital electronics. It also imparts knowledge on number
+systems, logic gates, various codes, parities, Boolean algebra, mux and demux, filp-flop, counters
+and shift registers.
+Course Objectives
+:
+After completing this course the students will be able to
+1. Design methods for combinational logic circuit.
+2. Verify truth tables of basic gates and universal gates.
+3. Design concept of sequential logic circuits.
+4. Design problem based /predefined logic based circuits.
+Course Contents
+:
+Unit 1: Introduction 2 hrs
+1.1 Define digital and analog signals and systems; differentiate between analog and
+digital signals.
+1.2 Need of digitization and applications of digital systems.
+Unit 2: Number Systems 9 hrs
+2.1 Decimal, binary, octal and hexadecimal number systems
+2.2 Conversion of number from one number system to another including decimal points.
+2.3 Binary addition, subtraction, multiplication and division, 1’s and 2’s complement
+method of subtraction.
+2.4 BCD code numbers and their limitations, addition of BCD coded numbers,
+conversion of BCD to decimal and vice-versa.
+2.5 Excess-3 code, gray code, binary to gray and gray to binary conversion.
+2.6 Concept of parity, single and double parity, error detection and correction using
+parity.
+Unit 3: Logic Gates 4 hrs
+3.1 Logic gates, positive and negative logic, pulse waveform, definition, symbols, truth
+tables, operation of NOT, OR, AND, NAND, NOR, EX-OR and EX-NOR gates.
+3.2 Realization of NAND and NOR as universal logic gates.
+20
+Unit 4: Logic Simplification 8 hrs
+4.1. Rules and laws of Boolean algebra, logic expression, De Morgan’s theorems and
+their proof.
+4.2. Sum of products form (minterm), Product of sum form (maxterms), simplification of
+Boolean expressions with the help of Rules and laws of Boolean algebra.
+4.3. Karnaugh mapping techniques up to 4 variables and their applications for
+simplification of Boolean expression.
+Unit 5: Arithmetic Circuits 3 hrs
+5.1. Half adder, full adder circuits and their operation.
+5.2. Block diagram and operation of Parallel binary adder (2-bit and 4-bit).
+Unit 6: Multiplexer/Demultiplexer 4 hrs
+6.1. Basic functions, symbols and logic diagrams of 4-inputs and 8-inputs multiplexers.
+6.2. Function/utility of 16 and 32 inputs multiplexers.
+6.3. Realization of Boolean expression using multiplexer/demultiplexers.
+Unit 7: Decoders, Display Devices and Associated Circuits 4 hrs
+7.1. Basic Binary decoder, 4-line to 16-line decoder circuit.
+7.2. BCD to decimal decoder, BCD to 7-segment decoder/driver, LED/LCD display.
+Unit 8: Encoders and Comparators 4 hrs
+8.1. Encoder, decimal to BCD encoder, decimal to BCD priority encoder, keyboard
+encoder.
+8.2. Magnitude comparators, symbols and logic diagrams of 2-bit and 4-bit comparators.
+Unit 9: Latches and Flip-Flops 6 hrs
+9.1. Latch, SR-latch, D-latch, Flip-flop, difference between latch and flip-flop.
+9.2. S-R, D flip-flop their operation using waveform and truth tables, race around
+condition.
+9.3. JK flip-flop, master slave and their operation using waveform and truth tables.
+9.4. T flip-flops.
+Unit 10: Counters 8 hrs
+10.1. Asynchronous counter, 4-bit Asynchronous counter, Asynchronous decade counter.
+10.2. Synchronous counter, 4-bit synchronous binary counter, synchronous decade
+counter.
+10.3. Up/down Asynchronous counters, divide by N counter MOD-3, MOD-5, MOD-7,
+MOD-12 counters.
+10.4. Ring counter, cascaded counter, counter applications.
+Unit 11: Shift Registers 8 hrs
+11.1. Shift registers functions, serial-in-serial out, serial-in-parallel-out, parallel-in-serial-
+out, parallel-in-parallel out.
+11.2. Universal shift register, shift register counter and applications of shift registers.
+21
+Practical /Laboratory: 45 hrs
+1. Study of logic breadboard with verification of truth table for AND, OR, NOT, NAND,
+EX-OR, NOR gate.
+2. Verification of NAND and NOR gate as universal gates.
+3. Construction of half-adder and full adder circuits using EX-OR and NAND gate and
+verification of their operation.
+4. Verify the operation of
+a) Multiplexer using an IC.
+b) De-multiplexer using an IC.
+5. Verify the operation of
+a) BCD to decimal decoder using an IC.
+b) BCD to 7 segment decoder using an IC.
+6. Verify operation of SR, JK, D-flip-flop master slave JK filp-flop using IC.
+7. Verify operation of SISO, PISO, SIPO, PIPO shift register (universal shift register).
+8. Study of ring counter, Up/down counter.
+9. Construct and verify the operation of an asynchronous binary decade counter using JK
+flip-flop.
+10. Verification of truth tables and study the operation of tristate buffer IC 74126 or similar
+IC and construction of 4/8 bit bi-directional bus by using an IC.
+11. Testing of digital ICs using IC tester.
+References:
+1. Digital Electronics and Applications by Malvino Leach, Tata McGral Hill, New Delhi
+2. Digital Logic Designs by Morris Mano, Prentice Hall of India, New Delhi
+3. Digital Fundamentals by Thomas Floyds, Universal Book Stall
+4. Digital Electronics by RP Jain, Tata McGraw Hill, New Delhi
+5. Digital Electronics by KS Jamwal, Dhanpat Rai & Co., New Delhi
+6. Digital Electronics by Rajiv Sapra, Ishan Publication, Ambala
+7. Digital Electronics by BR Gupta, Dhanpat Rai & Co., New Delhi
+8. Digital Systems: Principles and Applications by RJ Tocci, Prentice Hall of India, New Delhi
+9. Digital Electronics by Rajaraman V., Prentice Hall of India, New Delhi

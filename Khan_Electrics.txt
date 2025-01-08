@@ -1,0 +1,460 @@
+Basic electrical quantities: current, voltage, power
+Google Classroom
+Microsoft Teams
+Build an intuitive understanding of current and voltage, and power.
+Voltage and current are the cornerstone concepts in electricity. We will create our first mental models for these basic electrical quantities. We will also talk about power, which is what happens when voltage and current act together.
+Charge
+The concept of electricity arises from an observation of nature. We observe a force between objects, that, like gravity, acts at a distance. The source of this force has been given the name charge. A very noticeable thing about electric force is that it is large, far greater than the force of gravity. Unlike gravity, however, there are two types of electric charge. Opposite types of charge attract, and like types of charge repel. Gravity has only one type: it only attracts, never repels.
+Conductors and insulators
+Conductors are made of atoms whose outer, or valence, electrons have relatively weak bonds to their nuclei, as shown in this fanciful image of a copper atom. When a bunch of metal atoms are together, they gladly share their outer electrons with each other, creating a "swarm" of electrons not associated with a particular nucleus. A very small electric force can make the electron swarm move. Copper, gold, silver, and aluminum are good conductors. So is saltwater.
+There are also poor conductors. Tungsten—a metal used for light bulb filaments—and carbon—in diamond form—are relatively poor conductors because their electrons are less prone to move.
+Insulators are materials whose outer electrons are tightly bound to their nuclei. Modest electric forces are not able to pull these electrons free. When an electric force is applied, the electron clouds around the atom stretch and deform in response to the force, but the electrons do not depart. Glass, plastic, stone, and air are insulators. Even for insulators, though, electric force can always be turned up high enough to rip electrons away—this is called breakdown. That's what is happening to air molecules when you see a spark.
+Semiconductor materials fall between insulators and conductors. They usually act like insulators, but we can make them act like conductors under certain circumstances. The most well-known semiconductor material is Silicon (atomic number
+‍
+ 
+). Our ability to finely control the insulating and conducting properties of silicon allows us to create modern marvels like computers and mobile phones. The atomic-level details of how semiconductor devices work are governed by the theories of quantum mechanics.
+Current
+Current is the flow of charge.
+Charge flows in a current.
+Current is reported as the number of charges per unit time passing through a boundary. Visualize placing a boundary all the way through a wire. Station yourself near the boundary and count the number of charges passing by. Report how much charge passed through the boundary in one second. We assign a positive sign to current corresponding to the direction a positive charge would be moving.
+Since current is the amount of charge passing through a boundary in a fixed amount of time, it can be expressed mathematically using the following equation:
+‍
+ 
+
+That's current in a nutshell.
+A few remarks on current
+What carries current in metal? Since electrons are free to move about in metals, moving electrons are what makes up the current in metals. The positive nuclei in metal atoms are fixed in place and do not contribute to current. Even though electrons have a negative charge and do almost all the work in most electric circuits, we still define a positive current as the direction a positive charge would move. This is a very old historical convention.
+Can current be carried by positive charges? Yes. There are lots of examples. Current is carried by both positive and negative charges in saltwater: If we put ordinary table salt in water, it becomes a good conductor. Table salt is sodium chloride, NaCl. The salt dissolves in water, into free-floating Na
+‍
+ 
+and Cl
+‍
+ 
+ions. Both ions respond to electric force and move through the saltwater solution, in opposite directions. In this case, the current is composed of moving atoms, both positive and negative ions, not just loose electrons. Inside our bodies, electrical currents are moving ions, both positive and negative. The same definition of current works: count the number of charges passing by in a fixed amount of time.
+What causes current? Charged objects move in response to electric and magnetic forces. These forces come from electric and magnetic fields, which in turn come from the position and motion of other charges.
+What is the speed of current? We don't talk very often about the speed of current. Answering the question, "How fast is the current flowing?" requires understanding of a complex physical phenomenon and is not often relevant. Current usually isn't about meters per second, it's about charge per second. More often, we answer the question "How much current is flowing?" all the time.
+How do we talk about current? When discussing current, terms like through and in make a lot of sense. Current flows through a resistor; current flows in a wire. If you hear, "the current across ...", it should sound odd.
+Voltage
+To get our initial toehold on the concept of voltage, let's look at an analogy:
+Voltage resembles gravity
+For a mass
+‍
+ 
+, a change of height ‍
+ 
+corresponds to a change in potential energy,
+‍
+ 
+.
+For a charged particle
+‍
+ 
+, a voltage ‍
+ 
+corresponds to a change in potential energy,
+‍
+ 
+.
+Voltage in an electric circuit is analogous to the product of
+‍
+ 
+. Where ‍
+ 
+is the acceleration due to gravity and
+‍
+ 
+is the change of height.
+A ball at the top of the hill rolls down. When it is halfway down, it has given up half of its potential energy.
+An electron at the top of a voltage "hill" travels "downhill" through wires and elements of a circuit. It gives up its potential energy, doing work along the way. When the electron is halfway down the hill, it has given up, or "dropped", half of its potential energy.
+For both the ball and the electron, the trip down the hill happens spontaneously. The ball and electron move towards a lower energy state all by themselves. On the trip down, there can be things in the way of the ball, like trees or bears to bounce off. For electrons, we can guide electrons using wires and make them flow through electronic components —circuit design— and do interesting things along the way.
+We can express the voltage between two points mathematically as the change of energy experienced by a charge:
+‍
+ 
+That's an intuitive description of voltage in a nutshell.
+Power
+Power is defined as the rate energy (
+‍
+ 
+) is transformed or transferred over time. We measure power in units of joules/second, also known as watts.
+(
+‍
+ 
+)
+‍
+ 
+An electric circuit is capable of transferring power. Current is the rate of flow of charge, and voltage measures the energy transferred per unit of charge. We can insert these definitions into the equation for power:
+‍
+ 
+Electrical power is the product of voltage times current. in units of watts.
+Summary
+These mental models for current and voltage will get us started on all sorts of interesting electric circuits.
+If you want to reach beyond this intuitive description of voltage you can read this more formal mathematical description of electric potential and voltage.
+
+
+
+__
+
+Numbers in electrical engineering
+Google Classroom
+Microsoft Teams
+An overview of engineering notation, large and small numbers, number prefixes, and the grammar for units. Written by Willy McAllister.
+Electrical engineers come across very large and very small numbers compared to everyday experience. This article gives you an initial exposure to large and small numbers and has examples of how they show up in engineering applications.
+Engineering numbers are written in engineering notation, similar to scientific notation. It helps to get comfortable with engineering notation and the wide, dynamic range of numbers that engineers deal with on a regular basis.
+Scientific notation
+If you've studied math or science, you have probably run across scientific notation. You can brush up on scientific notation with this video. To express a number in scientific notation, you rewrite it as a number
+‍
+ 
+and ‍
+ 
+, multiplied by a power of
+‍
+ 
+. It might make more sense if we look at some examples:
+
+    Avogadro's Number looks like this in scientific notation: 
+
+‍
+ 
+. You may see the same number in computer syntax like this: ‍
+ 
+, where "E" for "Exponent" stands in for "
+‍
+ 
+".
+The speed of light is
+‍
+ 
+meters per second. This is expressed in scientific notation as ‍
+ 
+and may be rounded to fewer digits like this:
+‍
+ 
+.
+The charge on an electron is a tiny, unwieldy number.
+‍
+ 
+coulombs. Rather than writing all those zeros—and getting it wrong most of the time—we can use scientific notation to write the number more simply: ‍
+ 
+coulombs.
+
+Engineering notation
+The habit in engineering is to use a slightly modified scientific notation. Engineers like exponents in multiples of three. This means the digits to the left of the decimal point fall in the range of one to 999. Our minds do a pretty good job relating to numbers in this range.
+Engineering notation is only slightly different than scientific notation.
+It takes light 0.0000333564095 seconds to travel 10 kilometers in a vacuum. Let's convert this small number into engineering notation:
+
+    Find the decimal point.
+    Hop over three digits at a time, going right, until you hop over one, two, or three nonzero digits. In this case, take two hops to the right, until you hop over 
+
+‍
+ 
+.
+Write down
+‍
+ 
+.
+Add a decimal point:
+‍
+ 
+Write down the remaining digits:
+‍
+ 
+.
+Because we hopped right, finish by writing
+‍
+ 
+raised to the negative number of hops times three:
+
+    ‍
+     
+    .
+
+‍
+ 
+seconds is the time it takes for light to travel 10 kilometers in a vacuum, in engineering notation.
+A few more examples of engineering notation:
+
+    Speed of light: 
+
+‍
+ 
+A blink of an eye:
+
+    ‍
+     
+
+The number format rules are not rigid. As long as the point you are trying to make is clear and unambiguous, you may make exceptions. The blink of an eye may be clearly written 0.350 seconds if you intend the reader to compare the value to one second.
+One flaw in engineering notation is that it can mislead about the number of significant figures. Engineers generally deal with wide tolerances of manufactured components, so the number of significant figures in circuit designs is usually small: two to three. If the tolerance is important, it is common to write it next to the number, as shown in this example:
+A large resistance value:
+‍
+ 
+.
+Over time, you will develop a feel for numerical accuracy and rounding in different situations. When done appropriately, rounding to a few digits is not a sign of laziness, but a realization that real-world components are not all the same—and yet your design still has to work every time. There are other instances, such as during long calculations using computer arithmetic, where even tiny rounding errors are important to anticipate and control. It all depends on the situation. This is the engineering art.
+Prefixes
+Many numbers have names derived from Greek or Latin. Engineers and scientists use Système International d'Unités (SI) number prefixes.
+Some of the most common prefixes in engineering are listed below. Notice that the exponents are multiples of three. These prefixes are shorter and easier to say or abbreviate than the numerical equivalent: "
+‍
+ 
+".
+Number	Prefix	Symbol	Note
+‍
+ 
+	tera-	
+‍
+ 
+	
+‍
+ 
+	giga-	
+‍
+ 
+	
+‍
+ 
+	mega-	
+‍
+ 
+	
+‍
+ 
+	kilo-	
+‍
+ 
+	the only > 1 prefix in lower case
+‍
+ 
+			
+‍
+ 
+	milli-	
+‍
+ 
+	
+‍
+ 
+	micro-	
+‍
+ 
+	be careful
+‍
+ 
+(mu) doesn't turn into "m"
+‍
+ 
+	nano-	
+‍
+ 
+	
+‍
+ 
+	pico-	
+‍
+ 
+	
+Do engineers really deal with numbers this large and small?
+Yes! Below are examples of large, medium and small numbers used in real-world electrical systems. These examples are common occurrences, and you can always find greater extremes.
+Frequency: Frequency counts the number of times something happens per second—or another unit of time. The SI unit for frequency is hertz (Hz), which is the same as
+‍
+ 
+. You could also say "reciprocal second" or "per second". The internal clock of a modern personal computer runs at a frequency of around 3 GHz ‍
+ 
+. This corresponds to a clock period—the amount of time between clock ticks—of ‍
+ 
+or 333 ps
+‍
+ 
+. A human heart beats about one time per second (1 Hz), as detected by an electrocardiogram (ECG) machine.
+Resistance: Resistance is measured in units of ohms
+‍
+ 
+. The resistance of a wire is often much less than one ohm. Resistance up to tens of megohms
+‍
+ 
+is not unusual.
+Voltage: The unit of electrical potential is the volt (V). A flashlight battery is 1.5 volts. You can hold this battery in your hand without fear of electric shock. Inside a computer, the chips usually operate with 3 to 5 volts. A car battery is 12 volts. A wall socket is 110 or 220 volts, depending on where you live. This voltage can be fatal if you touch it with bare hands. High-tension power lines overhead are hundreds of thousands of volts—tension is the French word for voltage. As for tiny voltages, wireless signals are measured in microvolts
+‍
+ 
+when detected by a radio or mobile phone receiver.
+Current: Currents are measured in amperes (A). One ampere is a large current. Car batteries momentarily supply 100 amperes or more to start a car. A house may consume 150 amperes if everything is turned on. Currents can also be absurdly small. There are situations where 1 femtoamp
+‍
+ 
+matters.
+Time: Electrical circuits are capable of working at very short time scales. Time intervals in electronics range from 1 second, for the heartbeat example above, down to 1 picosecond
+‍
+ 
+.
+Capacitance: Capacitance has units of farads (F). A farad is defined as a coulomb per volt. Since a coulomb is such a large amount of charge, a farad is a large unit of capacitance. As a result, capacitance values you come across are tiny numbers. 100 microfarads is a large capacitance. If you twist two 1-inch (2- centimeter) pieces of ordinary insulated hookup wire together, those wires have a capacitance around one picofarad
+‍
+ 
+.
+Distance and Length: Distance and length have units of meters. We deal with huge distances and tiny lengths on a regular basis. Nature gives us some staggering distances—light travels at
+‍
+ 
+meters (300 million meters) in one second. Modern microelectronics blesses us with astoundingly small dimensions inside integrated circuits. Today's most aggressive—and expensive—integrated-circuit processes have dimensions as small as 15 nanometers
+‍
+ 
+. That's 15 billionths of a meter!
+Unit grammar
+These are the grammatical guidelines for writing unit names and symbols.
+
+    Names of all units start with a lowercase letter, even if the unit is named after a person.
+    Symbols for units are uppercase if the unit is named after a person, otherwise lowercase.
+
+Symbol name	example names	Symbol	example symbols	Named after
+second	1 millisecond	
+‍
+ 
+	
+‍
+ 
+	
+meter	300 kilometer	
+‍
+ 
+	
+‍
+ 
+	
+hertz	10 kilohertz	
+‍
+ 
+	
+‍
+ 
+	Hertz
+ohm	2 megohm	
+‍
+ 
+	
+‍
+ 
+	Ohm
+farad	10 picofarad	
+‍
+ 
+	
+‍
+ 
+	Faraday
+ampere	35 microamp	
+‍
+ 
+	
+‍
+ 
+	Ampère
+volt	11 kilovolt	
+‍
+ 
+	
+‍
+ 
+	Volta
+	
+Isn't it cool. Ohm gets a Greek symbol:
+‍
+ 
+, "Ohm ega."
+The short form "amp" is a perfectly acceptable way to abbreviate "ampere".
+The numbers you encounter as you study electrical engineering span a huge range. You will come across these numbers on Khan Academy, in textbooks, and in real-world electronic systems. 
+
+
+____
+
+
+
+Defining the standard electrical units
+Google Classroom
+Microsoft Teams
+Formal definitions of the standard electrical units: ampere, coulomb, charge on an electron, and the volt. Written by Willy McAllister.
+Electrical units can be described in a formal manner, and that's what we do here. The standard electrical units are defined in a specific order. The ampere is defined first. It is an SI base unit, the only electrical unit derived from the outcome of an experiment.
+Next up after the ampere comes the coulomb and charge on an electron. Then we derive the rest of our favorites, the watt, the volt, and the ohm. These derived electrical units are defined in terms of the ampere and other SI base units (meter, kilogram, second).
+Ampere
+The definition of the SI unit of current, the ampere, comes from the study of magnetism. Electric currents in wires give rise to magnetic fields (Biot–Savart Law, 1820). Those magnetic fields in turn give rise to magnetic forces on the wires (Ampere's Force Law, 1825). Two parallel wires carrying current exert a force on each other. The official SI definition of the ampere is:
+
+    The ampere is that constant current which—if maintained in two straight parallel conductors of infinite length, of negligible circular cross-section, and placed 1 meter apart in vacuum—would produce between these conductors a force equal to 
+
+    ‍
+     
+    newtons per meter of length.
+
+The definition of the ampere comes from the outcome of an experiment. To create a standard
+‍
+ 
+ampere, you perform some version of the following experiment. Set up two 1-meter-long wires in parallel, and arrange for a way to measure the force on the wires (a strain gauge).
+Apply the same current to both wires, flowing in the same direction. Adjust the currents in the wires up or down while measuring the force on the wires. When the force is
+‍
+ 
+newtons, the current is 1 ampere, by definition.
+Coulomb
+The coulomb is the SI unit of charge. The size of a coulomb is derived from the ampere. One coulomb is defined as the amount of charge flowing when the current is 1 ampere.
+‍
+ 
+or equivalently,
+‍
+ 
+Electron charge
+In 1897, J.J. Thomson proved the existence of the electron. Twelve years later, starting in 1909, Robert Millikan performed his oil drop experiments to establish the charge of the electron.
+The charge on an electron can be expressed in coulombs as
+‍
+ 
+.
+If we invert this expression, we see that the coulomb can be stated in terms of number of electron charges:
+‍
+ 
+ 
+ 
+ ____
+
+Summary of Basic Electrical Quantities and Concepts:
+
+    Basic Electrical Quantities:
+        Current (I): Flow of electric charge, measured in amperes (A). Current is the rate at which charge passes through a boundary in a given time.
+        Voltage (V): The potential difference between two points, analogous to gravity for a mass. Voltage determines the potential energy change when a charge moves, measured in volts (V).
+        Power (P): The rate at which energy is transferred or transformed, defined as the product of voltage and current (P = VI), measured in watts (W).
+
+    Charge:
+        The fundamental source of electric force. There are two types: positive and negative. Opposite charges attract, like charges repel. The unit of charge is the coulomb (C).
+
+    Conductors and Insulators:
+        Conductors (e.g., copper, gold) allow electrons to move freely, enabling current. Insulators (e.g., plastic, glass) have tightly bound electrons, preventing current. Semiconductors (e.g., silicon) have properties between conductors and insulators.
+
+    Current:
+        Definition: The flow of electric charge, carried by free electrons in metals, or ions in solutions. It is measured in amperes (A).
+        Direction: Current is defined in the direction that positive charges would move, even though electrons (which are negative) typically flow in the opposite direction.
+        Units: 1 ampere (A) is the flow of 1 coulomb of charge per second.
+
+    Voltage:
+        Voltage is the potential energy difference between two points. It can be visualized as a "hill" where charges naturally move downhill, losing potential energy.
+        Units: Measured in volts (V), where 1 volt is the potential energy change of 1 joule per coulomb of charge.
+
+    Power:
+        Power is the rate of energy transfer in a circuit, given by P=IVP=IV.
+        Units: Measured in watts (W), where 1 watt equals 1 joule per second.
+
+Overview of Electrical Engineering Notation:
+
+    Scientific Notation: Used to express large or small numbers, e.g., the speed of light or charge on an electron. This format uses a base number multiplied by a power of 10 (e.g., 3×1083×108 m/s).
+
+    Engineering Notation: A variation of scientific notation where exponents are multiples of three, which helps simplify numerical comparisons. Common prefixes used in engineering notation include:
+        Tera- (T): 10121012
+        Giga- (G): 109109
+        Mega- (M): 106106
+        Kilo- (k): 103103
+        Milli- (m): 10−310−3
+        Micro- (μ): 10−610−6
+        Nano- (n): 10−910−9
+
+    Examples of Real-World Applications:
+        Voltage: A flashlight battery is 1.5V, a car battery is 12V, and power lines carry hundreds of thousands of volts.
+        Current: Currents in electrical systems can range from femtoamps to thousands of amperes.
+        Capacitance: Capacitance values are often small, like in picofarads (pF) for common components.
+
+Standard Electrical Units:
+
+    Ampere (A): Defined by the force between two parallel wires carrying current. The ampere is the fundamental unit of electric current.
+
+    Coulomb (C): The SI unit of charge. One coulomb is the charge that flows through a conductor when a current of 1 ampere is maintained for 1 second.
+
+    Electron Charge: The charge of an electron is approximately 1.602×10−191.602×10−19 coulombs. This value is key in determining the charge of smaller particles or entities.
+
+In summary, these concepts and units form the foundation of understanding electrical systems and their behavior in both theoretical and practical contexts. They help engineers design and analyze circuits, from simple electrical systems to advanced semiconductor technologies.
